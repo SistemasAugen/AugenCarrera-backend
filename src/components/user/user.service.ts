@@ -30,7 +30,7 @@ export class UserService {
 
   async validateRegisteredUser(email: string): Promise<void> {
     try {
-      const isRegisterUserEmail = await this.usersRepository.find({
+      const isRegisterUserEmail = await this.usersRepository.findOne({
         where: {
           email: email
         }
@@ -50,24 +50,23 @@ export class UserService {
       let encriptedPassword = await bcrypt.hash(generatedPassword, saltRounds);
       registerUserDto.password = encriptedPassword;
 
-      // const user = await this.usersRepository.save(registerUserDto);
-      // if (user) {
-      await this.emailSenderService.sendTestEmail({
-        email: registerUserDto.email,
-        subject: 'Usuario creado',
-        template: 'user-register',
-        templateData: {
-          name: registerUserDto.name,
-          password: generatedPassword,
-          userSiteUrl: process.env.LOGIN_URL
-        }
-      });
-      // } else {
-      //   throw new BadRequestException('Error al registrar el usuario');
-      // }
+      const user = await this.usersRepository.save(registerUserDto);
+      if (user) {
+        await this.emailSenderService.sendTestEmail({
+          email: registerUserDto.email,
+          subject: 'Usuario creado',
+          template: 'user-register',
+          templateData: {
+            name: registerUserDto.name,
+            password: generatedPassword,
+            userSiteUrl: process.env.LOGIN_URL
+          }
+        });
+      } else {
+        throw new BadRequestException('Error al registrar el usuario');
+      }
       return registerUserDto;
     } catch (ex) {
-      console.error("ERROR AL REGISTRAR EL USUARIO", ex)
       throw new BadRequestException("Error al registrar el usuario", ex.message);
     }
   }
