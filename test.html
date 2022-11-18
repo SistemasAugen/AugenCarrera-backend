@@ -1,4 +1,4 @@
-{{!-- <style>
+<!-- <style>
   * {
     margin: 0;
     border: 0;
@@ -6,13 +6,22 @@
   }
 
   body {
-    font-family: "Ebrima", sans-serif;
-    background-color: darkgray;
+    font-family: "Raleway-Regular";
+    background-color: white;
     font-size: 1.2em;
     max-width: 600px;
     margin: 0 auto;
     padding: 0%;
-    color: #565859 !important;
+  }
+
+  @font-face {
+    font-family: 'Raleway-Regular';
+    src: url(./src/fonts/raleway/Raleway-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Raleway-SemiBold';
+    src: url(./src/fonts/raleway/Raleway-SemiBold.ttf);
   }
 
   #wrapper {
@@ -20,80 +29,90 @@
     background: #FFFFFF;
   }
 
-  img {
-    width: 100%;
+  .img-carrera {
+    width: 12rem;
+    height: 2rem;
     height: auto;
+    margin-right: 30px;
   }
 
-  .banner {
-    text-align: center;
-    padding-top: 55px;
-    margin-bottom: 3%;
-  }
-
-  .one-col {
-    max-width: 98%;
-    font-family: sans-serif;
+  .img-augen {
+    width: 12rem;
+    height: 2rem;
+    height: auto;
+    margin-left: 20px;
   }
 
   .one-col button {
-    padding: 10px 20px;
-    width: 80%;
-    height: auto;
+    width: 40%;
+    height: 8%;
     font-size: 1.2em;
     margin: 0 auto;
-    display: block;
-    border: none;
     font-weight: bold;
-    background: rgb(250, 250, 250);
-    background: linear-gradient(90deg, rgba(250, 250, 250, 1) 0%, rgba(252, 211, 199, 1) 0%, rgba(252, 207, 193, 1) 0%, rgba(255, 140, 105, 1) 43%);
+    display: block;
+    font-family: "Raleway-Regular";
+    background: black;
     color: #FAFAFA;
-    box-shadow: 0 6px 8px rbga(0, 0, 0, 0.1);
     border-radius: 8px;
-    transition: 0.4s;
   }
 
-  .one-col button:hover {
-    border-radius: 30px;
+  .parent {
+    display: grid;
+    place-items: center;
+
+    background: white;
+    width: 600px;
+    height: 700px;
   }
 
-  h3 {
-    letter-spacing: 1%;
-    text-align: justify;
+  .child {
+    text-align: center;
+    margin-left: -65px;
+    width: 715px;
+    margin-top: 100px;
   }
 
-  p {
-    text-align: justify;
-    color: #565859;
-  }
-
-  .line {
-    clear: both;
-    height: 2px;
-    background-color: black;
-  }
-
-  .division {
-    padding-bottom: 150px;
-  }
-
-  .footer {
-    background-color: #E26944;
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
   }
 
   a {
     text-decoration: none;
+    font-weight: bold;
   }
 
-  .email {
-    text-align: left;
+  p {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(73, 73, 73);
   }
 
-  .domain {
-    color: rgba(255, 255, 255, 0.842);
-    text-align: left;
-    font-family: sans-serif;
-    padding: 1%;
+  .title {
+    font-family: "Raleway-SemiBold";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .text-bold {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding: '10px';
+    place-items: 'center';
+    flex-wrap: wrap;
+  }
+
+  .vertical-line {
+    border-left: 2px solid black;
+    height: 30px;
+    padding: 5px;
   }
 </style>
 
@@ -103,35 +122,44 @@
 <head>
   <meta charset="UTF-8">
   <meta"viewport" content="width=device-width, initial-scales=1.0">
-    <title> Document </title>
+    <title> user-register </title>
 </head>
 
 <body>
-  <div id="wrapper">
-    <div class="banner">
-      <img src="https://okhosting.com/resources/uploads/2019/02/pug-html.png" width="513" height="251" alt="PUG">
-    </div>
 
-    <div class="one-col">
-      <h3>Has solicitado el cambio de contraseña</h3>
-      <br>
-      <div>
-        <p>Se ha solicitado el cambio de contraseña ve al siguiente enlace para realizar el cambio.</p>
+  <div>
+    <div class="child">
+      <h1 class="title">¡Bienvenido!</h1>
+      <br />
+      <br />
+      <br />
+      <div class="text">
+        <p>Hola <strong class="text-bold">({{user}})</strong>. Acabas de ser dado de alta en nuestro sistema de
+          administración de RXs
+          Augen.
+        </p>
+        <br />
+        <p>Esta es tu contraseña <strong class="text-bold">({{password}})</strong></p>
       </div>
-      <a href="{{url}}" target="_blank"> <button> IR A MI CUENTA</button> </a>
+      <br />
+      <br />
+      <br />
+      <a href="{{userSiteUrl}}" class="one-col"><button>Ir a mi cuenta</button></a>
     </div>
-    <div class="division">
-
-    </div>
-
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="footer">
-      <h4 class="domain"> Mensaje enviado desde {{siteName}}</h4>
+      <img class="img-carrera" src="./src/imgs/logoCarrera.svg.png" alt="logo carrera">
+      <div class="vertical-line"></div>
+      <img class="img-augen" src="./src/imgs/logoAugen.png" alt="logo augen">
     </div>
   </div>
-
 </body>
 
-</html> --}}
+</html> -->
 <style>
   * {
     margin: 0;
@@ -268,12 +296,12 @@
       <br />
       <br />
       <div class="text">
-        <p>Da clic en el botón para restablecer tu nueva contraseña.</p>
+        <p>Da clic e el botón para restablecer tu nueva contraseña.</p>
       </div>
       <br />
       <br />
       <br />
-      <a href="{{url}}" class="one-col"><button>Restablecer contraseña</button></a>
+      <a href="{{userSiteUrl}}" class="one-col"><button>Restablecer contraseña</button></a>
     </div>
     <br />
     <br />

@@ -1,4 +1,4 @@
-<style>
+{{!-- <style>
     * {
         margin: 0;
         border: 0;
@@ -109,15 +109,14 @@
 <body>
     <div id="wrapper">
         <div class="banner">
-            <img src="https://okhosting.com/resources/uploads/2019/02/pug-html.png" width="513"
-                height="251" alt="PUG">
+            <img src="https://okhosting.com/resources/uploads/2019/02/pug-html.png" width="513" height="251" alt="PUG">
         </div>
 
         <div class="one-col">
-            <h3>¡Bienvenido al sistema tal!</h3>
+            <h3>Bienvenido</h3>
             <br>
             <div>
-                <p>Hola {{name}}, has sido registrado dentro del sistema tal.</p>
+                <p>Hola {{name}}. Acabas de ser dado de alta en nuestro sistema de administración</p>
                 <p>Tu contraseña es la siguiemte, recuerda cambiarla una vez inicies sesion</p>
                 <h4>Password: {{password}}</h4>
             </div>
@@ -128,10 +127,173 @@
         </div>
 
         <div class="footer">
-            <h4 class="domain"> Mensaje enviado desde {{siteName}}</h4>
+            <h4 class="domain">Mensaje enviado desde {{siteName}}</h4>
         </div>
     </div>
 
+</body>
+
+</html> --}}
+
+<style>
+    * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Raleway-Regular";
+        background-color: white;
+        font-size: 1.2em;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0%;
+    }
+
+    @font-face {
+        font-family: 'Raleway-Regular';
+        src: url(./src/fonts/raleway/Raleway-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: 'Raleway-SemiBold';
+        src: url(./src/fonts/raleway/Raleway-SemiBold.ttf);
+    }
+
+    #wrapper {
+        /* background: #F6FAFF; */
+        background: #FFFFFF;
+    }
+
+    .img-carrera {
+        width: 12rem;
+        height: 2rem;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .img-augen {
+        width: 12rem;
+        height: 2rem;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .one-col button {
+        width: 40%;
+        height: 8%;
+        font-size: 1.2em;
+        margin: 0 auto;
+        font-weight: bold;
+        display: block;
+        font-family: "Raleway-Regular";
+        background: black;
+        color: #FAFAFA;
+        border-radius: 8px;
+    }
+
+    .parent {
+        display: grid;
+        place-items: center;
+
+        background: white;
+        width: 600px;
+        height: 700px;
+    }
+
+    .child {
+        text-align: center;
+        margin-left: -65px;
+        width: 715px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 2rem;
+        text-align: center;
+        color: rgb(73, 73, 73);
+    }
+
+    .title {
+        font-family: "Raleway-SemiBold";
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .text-bold {
+        color: black !important;
+        font-weight: bold;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        padding: '10px';
+        place-items: 'center';
+        flex-wrap: wrap;
+    }
+
+    .vertical-line {
+        border-left: 2px solid black;
+        height: 30px;
+        padding: 5px;
+    }
+</style>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta"viewport" content="width=device-width, initial-scales=1.0">
+        <title> user-register </title>
+</head>
+
+<body>
+
+    <div>
+        <div class="child">
+            <h1 class="title">¡Bienvenido!</h1>
+            <br />
+            <br />
+            <br />
+            <div class="text">
+                <p>Hola <strong class="text-bold">({{name}})</strong>. Acabas de ser dado de alta en nuestro sistema de
+                    administración de RXs
+                    Augen.
+                </p>
+                <br />
+                <p>Esta es tu contraseña <strong class="text-bold">({{password}})</strong></p>
+            </div>
+            <br />
+            <br />
+            <br />
+            <a href="{{userSiteUrl}}" class="one-col"><button>Ir a mi cuenta</button></a>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="footer">
+            <img class="img-carrera" src="./src/imgs/logoCarrera.svg.png" alt="logo carrera">
+            <div class="vertical-line"></div>
+            <img class="img-augen" src="./src/imgs/logoAugen.png" alt="logo augen">
+        </div>
+    </div>
 </body>
 
 </html>
