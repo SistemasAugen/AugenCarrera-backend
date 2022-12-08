@@ -1,299 +1,161 @@
-{{!-- <style>
-    * {
-        margin: 0;
-        border: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: "Ebrima", sans-serif;
-        background-color: darkgray;
-        font-size: 1.2em;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 0%;
-        color: #565859 !important;
-    }
-
-    #wrapper {
-        /* background: #F6FAFF; */
-        background: #FFFFFF;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    .banner {
-        text-align: center;
-        padding-top: 55px;
-        margin-bottom: 3%;
-    }
-
-    .one-col {
-        max-width: 98%;
-        font-family: sans-serif;
-    }
-
-    .one-col button {
-        padding: 10px 20px;
-        width: 80%;
-        height: auto;
-        font-size: 1.2em;
-        margin: 0 auto;
-        display: block;
-        border: none;
-        font-weight: bold;
-        background: rgb(250, 250, 250);
-        background: linear-gradient(90deg, rgba(250, 250, 250, 1) 0%, rgba(252, 211, 199, 1) 0%, rgba(252, 207, 193, 1) 0%, rgba(255, 140, 105, 1) 43%);
-        color: #FAFAFA;
-        box-shadow: 0 6px 8px rbga(0, 0, 0, 0.1);
-        border-radius: 8px;
-        transition: 0.4s;
-    }
-
-    .one-col button:hover {
-        border-radius: 30px;
-    }
-
-    h3 {
-        letter-spacing: 1%;
-        text-align: justify;
-    }
-
-    p {
-        text-align: justify;
-        color: #565859;
-    }
-
-    .line {
-        clear: both;
-        height: 2px;
-        background-color: black;
-    }
-
-    .division {
-        padding-bottom: 150px;
-    }
-
-    .footer {
-        background-color: #E26944;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    .email {
-        text-align: left;
-    }
-
-    .domain {
-        color: rgba(255, 255, 255, 0.842);
-        text-align: left;
-        font-family: sans-serif;
-        padding: 1%;
-    }
-</style>
-
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta"viewport" content="width=device-width, initial-scales=1.0">
-        <title> Document </title>
-</head>
-
-<body>
-    <div id="wrapper">
-        <div class="banner">
-            <img src="https://okhosting.com/resources/uploads/2019/02/pug-html.png" width="513" height="251" alt="PUG">
-        </div>
-
-        <div class="one-col">
-            <h3>Bienvenido</h3>
-            <br>
-            <div>
-                <p>Hola {{name}}. Acabas de ser dado de alta en nuestro sistema de administración</p>
-                <p>Tu contraseña es la siguiemte, recuerda cambiarla una vez inicies sesion</p>
-                <h4>Password: {{password}}</h4>
-            </div>
-            <a href="{{userSiteUrl}}"> <button> IR A MI CUENTA</button> </a>
-        </div>
-        <div class="division">
-
-        </div>
-
-        <div class="footer">
-            <h4 class="domain">Mensaje enviado desde {{siteName}}</h4>
-        </div>
-    </div>
-
-</body>
-
-</html> --}}
-
 <style>
-    * {
-        margin: 0;
-        border: 0;
-        padding: 0;
-    }
+  * {
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
 
-    body {
-        font-family: "Raleway-Regular";
-        background-color: white;
-        font-size: 1.2em;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 0%;
-    }
+  body {
+    font-family: "Raleway-Regular";
+    background-color: white;
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0%;
+  }
 
-    @font-face {
-        font-family: 'Raleway-Regular';
-        src: url(./src/fonts/raleway/Raleway-Regular.ttf);
-    }
+  @font-face {
+    font-family: 'Raleway-Regular';
+    src: url(./src/fonts/raleway/Raleway-Regular.ttf);
+  }
 
-    @font-face {
-        font-family: 'Raleway-SemiBold';
-        src: url(./src/fonts/raleway/Raleway-SemiBold.ttf);
-    }
+  @font-face {
+    font-family: 'Raleway-SemiBold';
+    src: url(./src/fonts/raleway/Raleway-SemiBold.ttf);
+  }
 
-    #wrapper {
-        /* background: #F6FAFF; */
-        background: #FFFFFF;
-    }
+  #wrapper {
+    background: #FFFFFF;
+  }
 
-    .img-carrera {
-        width: 12rem;
-        height: 2rem;
-        height: auto;
-        margin-right: 30px;
-    }
+  .img-carrera {
+    width: 12rem;
+    height: 2rem;
+    height: auto;
+    margin-right: 30px;
+  }
 
-    .img-augen {
-        width: 12rem;
-        height: 2rem;
-        height: auto;
-        margin-left: 20px;
-    }
+  .img-augen {
+    width: 12rem;
+    height: 2rem;
+    height: auto;
+    margin-left: 20px;
+  }
 
-    .one-col button {
-        width: 40%;
-        height: 8%;
-        font-size: 1.2em;
-        margin: 0 auto;
-        font-weight: bold;
-        display: block;
-        font-family: "Raleway-Regular";
-        background: black;
-        color: #FAFAFA;
-        border-radius: 8px;
-    }
+  .one-col button {
+    width: 40%;
+    height: 8%;
+    font-size: 1.2em;
+    margin: 0 auto;
+    font-weight: bold;
+    display: block;
+    font-family: "Raleway-Regular";
+    background: black;
+    color: #FAFAFA;
+    border-radius: 8px;
+  }
 
-    .parent {
-        display: grid;
-        place-items: center;
+  .parent {
+    display: grid;
+    place-items: center;
 
-        background: white;
-        width: 600px;
-        height: 700px;
-    }
+    background: white;
+    width: 600px;
+    height: 700px;
+  }
 
-    .child {
-        text-align: center;
-        margin-left: -65px;
-        width: 715px;
-        margin-top: 100px;
-    }
+  .child {
+    text-align: center;
+    margin-left: -65px;
+    width: 715px;
+    margin-top: 100px;
+  }
 
-    h1 {
-        font-size: 4rem;
-        font-weight: bold;
-    }
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
 
-    a {
-        text-decoration: none;
-        font-weight: bold;
-    }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-    p {
-        font-size: 2rem;
-        text-align: center;
-        color: rgb(73, 73, 73);
-    }
+  p {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(73, 73, 73);
+  }
 
-    .title {
-        font-family: "Raleway-SemiBold";
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-weight: bold;
-    }
+  .title {
+    font-family: "Raleway-SemiBold";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+  }
 
-    .text-bold {
-        color: black !important;
-        font-weight: bold;
-    }
+  .text-bold {
+    color: black !important;
+    font-weight: bold;
+  }
 
-    .footer {
-        display: flex;
-        justify-content: center;
-        padding: '10px';
-        place-items: 'center';
-        flex-wrap: wrap;
-    }
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding: '10px';
+    place-items: 'center';
+    flex-wrap: wrap;
+  }
 
-    .vertical-line {
-        border-left: 2px solid black;
-        height: 30px;
-        padding: 5px;
-    }
+  .vertical-line {
+    border-left: 2px solid black;
+    height: 30px;
+    padding: 5px;
+  }
 </style>
 
 <!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta"viewport" content="width=device-width, initial-scales=1.0">
-        <title> user-register </title>
+  <meta charset="UTF-8">
+  <meta"viewport" content="width=device-width, initial-scales=1.0">
+    <title> user-register </title>
 </head>
 
 <body>
 
-    <div>
-        <div class="child">
-            <h1 class="title">¡Bienvenido!</h1>
-            <br />
-            <br />
-            <br />
-            <div class="text">
-                <p>Hola <strong class="text-bold">({{name}})</strong>. Acabas de ser dado de alta en nuestro sistema de
-                    administración de RXs
-                    Augen.
-                </p>
-                <br />
-                <p>Esta es tu contraseña <strong class="text-bold">({{password}})</strong></p>
-            </div>
-            <br />
-            <br />
-            <br />
-            <a href="{{userSiteUrl}}" class="one-col"><button>Ir a mi cuenta</button></a>
-        </div>
+  <div>
+    <div class="child">
+      <h1 class="title">¡Bienvenido!</h1>
+      <br />
+      <br />
+      <br />
+      <div class="text">
+        <p>Hola <strong class="text-bold">({{name}})</strong>. Acabas de ser dado de alta en nuestro sistema de
+          administración de RXs
+          Augen.
+        </p>
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="footer">
-            <img class="img-carrera" src="./src/imgs/logoCarrera.svg.png" alt="logo carrera">
-            <div class="vertical-line"></div>
-            <img class="img-augen" src="./src/imgs/logoAugen.png" alt="logo augen">
-        </div>
+        <p>Esta es tu contraseña <strong class="text-bold">({{password}})</strong></p>
+      </div>
+      <br />
+      <br />
+      <br />
+      <a href="{{userSiteUrl}}" class="one-col"><button>Ir a mi cuenta</button></a>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="footer">
+      <img class="img-carrera" src="./src/imgs/logoCarrera.svg.png" alt="logo carrera">
+      <div class="vertical-line"></div>
+      <img class="img-augen" src="./src/imgs/logoAugen.png" alt="logo augen">
+    </div>
+  </div>
 </body>
 
 </html>
