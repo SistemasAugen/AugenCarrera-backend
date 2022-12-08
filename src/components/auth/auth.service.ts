@@ -38,6 +38,9 @@ export class AuthService {
       }
       // obtener info del usuario segun el whereObject
       const user = await query.addSelect(["user.id", 'user.email', 'user.password']).getOne();
+      if(!user) {
+        throw new UnauthorizedException("Correo o contraseña incorrectos");
+      }
       if (await bcrypt.compare(password, user.password)) {
         return user;
       } else {
