@@ -5,6 +5,8 @@ import { Facturation } from 'src/database/entities/facturation.entity';
 import { Laboratory } from 'src/database/entities/lab.entity';
 import { Branch } from 'src/database/entities/Pdv.entity';
 import { User } from 'src/database/entities/user.entity';
+import { DocumentsController } from '../documents/documents.controller';
+import { DocumentsService } from '../documents/documents.service';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JWTStrategy } from './strategy/jwt.strategy';

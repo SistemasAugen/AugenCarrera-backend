@@ -12,7 +12,6 @@ export class AuthService {
     @InjectRepository(User)
     private usersRepository: Repository<User>,
     private jwtService: JwtService
-
   ) { }
 
   async validateUser(userIdentifier: string, password: string) {

@@ -8,6 +8,14 @@ export type RegisterUserData = {
   templateData: Object;
 }
 
+export type RxEmailData = {
+  subject: string;
+  template: string;
+  emailList: string[];
+  file: Express.Multer.File;
+  templateData: Object;
+}
+
 @Injectable()
 export class EmailSenderService {
   constructor(
@@ -22,5 +30,26 @@ export class EmailSenderService {
       template: emailData.template,
       context: { ...emailData.templateData, siteName: process.env.SITE_NAME }
     });
+  }
+
+  public async sendRxEmail(emailData: RxEmailData) {
+    await emailData.emailList.map(async email => {
+      try {
+        await this.mailerService.sendMail({
+          to: email,
+          from: process.env.SMTP_FROM_EMAIL,
+          subject: emailData.subject,
+          template: emailData.template,
+          attachments: [{
+            filename: emailData.file.filename,
+            content: emailData.file.buffer,
+            contentType: emailData.file.mimetype
+          }],
+          context: { ...emailData.templateData, siteName: process.env.SITE_NAME }
+        });
+      } catch (ex) {
+        console.log(ex);
+      }
+    })
   }
 }

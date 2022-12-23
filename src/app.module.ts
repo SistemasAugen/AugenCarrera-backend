@@ -13,6 +13,8 @@ import { Facturation } from './database/entities/facturation.entity';
 import { Branch } from './database/entities/Pdv.entity';
 import { AccountController } from './components/account/account.controller';
 import { PasswordResets } from './database/entities/password-request.entity';
+import { DocumentsService } from './components/documents/documents.service';
+import { DocumentsController } from './components/documents/documents.controller';
 
 const dotenv = require('dotenv')
 dotenv.config();
@@ -69,11 +71,13 @@ const SMTP_BOOLEAN_PREVIEW = process.env.SMTP_PREVIEW == 'true';
   ],
   providers: [
     UserService,
-    EmailSenderService
+    EmailSenderService,
+    DocumentsService
   ],
   controllers: [
     UserController,
-    AccountController
+    AccountController,
+    DocumentsController
   ],
   exports: [JwtModule]
 })
