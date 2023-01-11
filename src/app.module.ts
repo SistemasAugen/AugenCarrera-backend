@@ -25,10 +25,10 @@ const SMTP_BOOLEAN_PREVIEW = process.env.SMTP_PREVIEW == 'true';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '107.180.46.186',
-      username: 'system_user',
-      password: '%^Ue_vtx&*,G',
-      database: 'augen_test',
+      host: '88.99.193.220',
+      username: 'augenlabs_sistema_user',
+      password: '%7eJ=6YH+843',
+      database: 'augenlabs_augen_test',
       autoLoadEntities: true,
       synchronize: false, // como no queremos que las entidades de este proyecto modifiquen a la base de datos y solo consultemos informacion se dejara en false
       migrationsRun: false,
